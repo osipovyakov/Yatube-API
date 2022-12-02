@@ -50,7 +50,7 @@ class FollowSerializer(serializers.ModelSerializer):
             )
         ]
 
-    def validate(self, data):
+    def validate (self, data):
         if self.context['request'].user == data['following']:
             raise serializers.ValidationError()
         return data
